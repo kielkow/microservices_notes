@@ -1,0 +1,13 @@
+// ARQUITETURA DE API GATEWAY
+O API Gateway atua como ponto de entrada e distribuidor para todas as solicitações destinadas aos demais gateways, seguindo um padrão de design amplamente 
+empregado na arquitetura de Microserviços para gerenciar as requisições a todos os outros serviços. Optamos por esta estratégia pelas seguintes razões principais:
+
+- Roteamento e Balanceamento de Carga: O API Gateway desempenha o papel de um proxy reverso, direcionando as solicitações aos serviços apropriados e balanceando 
+a carga das solicitações recebidas, assegurando que nenhum único serviço seja sobrecarregado.
+- Monitoramento e Registro: A existência de um ponto único de entrada e saída facilita o monitoramento do tráfego e o registro de solicitações e respostas, 
+elementos cruciais para a depuração e compreensão de como os clientes interagem com os serviços.
+- Redução da Complexidade para os Clientes: O API Gateway pode mascarar a arquitetura subjacente e a divisão dos serviços ao cliente. Para este último, a interação
+ocorre como se fosse com uma única API monolítica
+
+O único problema que o API Gateway pode apresentar é se tornar um gargalo de desempenho se não conseguir lidar com o volume de tráfego ou se não for altamente 
+disponível.
